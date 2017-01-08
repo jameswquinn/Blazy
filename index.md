@@ -7,7 +7,7 @@ permalink: index.html
 description:
 title: About Ayuplus - London Based Design Agency | ayuplus.io
 # background video at top of page
-bg_image: assets/images/poster.jpg
+bg_image: poster.jpg
 bg_video: black.mp4
 show_bg_video: true
 image: assets/images/poster.jpg

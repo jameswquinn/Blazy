@@ -8,13 +8,13 @@ description:
 title: About Ayuplus - London Based Design Agency | ayuplus.io
 # background video at top of page
 bg_image: assets/images/poster.jpg
-bg_video: black.mp4
+bg_video: black
 show_bg_video: true
 image: assets/images/poster.jpg
 alt: We needed an image to demo
 ---
 
-{% if page.show_bg_video %}{% include masthead.loop.html %}{% endif %}
+{% if page.show_video %}{% include masthead.loop.html %}{% endif %}
 <div class="container">
 
 <div class="row">

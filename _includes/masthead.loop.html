@@ -1,7 +1,12 @@
 <!-- Video Markup -->
 <section class="masthead">
-  <video class="b-lazy masthead-video" data-src="assets/videos/{{page.bg_video}}.mp4" autoplay loop muted poster="{{ page.bg_image }}"></video>
+    <video class="b-lazy masthead-video" autoplay loop muted poster="{{ page.bg_image }}">
+        <source data-src="assets/videos/{{page.bg_video}}.mp4" type="video/mp4">
+        <source data-src="assets/videos/{{page.bg_video}}.webm" type="video/webm">
+    </video>
   <div class="masthead-overlay"></div>
   <div class="masthead-arrow"></div>
   <h1>AYU+<span>as yet unfinished</span></h1>
 </section>
+
+

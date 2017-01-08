@@ -14,7 +14,7 @@ image: assets/images/poster.jpg
 alt: We needed an image to demo
 ---
 
-{% if page.show_video %}{% include masthead.loop.html %}{% endif %}
+{% if page.show_bg_video %}{% include masthead.loop.html %}{% endif %}
 <div class="container">
 
 <div class="row">

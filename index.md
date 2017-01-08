@@ -10,7 +10,7 @@ title: About Ayuplus - London Based Design Agency | ayuplus.io
 bg_image: assets/images/poster.jpg
 bg_video: black.mp4
 show_bg_video: true
-image: assets/images/poster.jpg
+image: poster.jpg
 alt: We needed an image to demo
 ---
 

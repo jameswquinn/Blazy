@@ -1,0 +1,35 @@
+<style>
+    body {
+        background-color: black;
+    }
+#left-panel {
+    position: fixed;
+    color: white;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    z-index: 2;
+    overflow:auto;
+    height:2000px;
+    transition: 300ms;
+}
+</style>
+<script src="https://cdn.jsdelivr.net/zepto/1.2.0/zepto.min.js"></script>
+<div id="left-panel">
+    <div style="height:5000px;">CONTENT</div>
+</div>
+<script>
+$(document).ready(function () {
+    var scroll_pos = 0;
+    $("#left-panel").scroll(function () {
+        scroll_pos = $(this).scrollTop();
+        if (scroll_pos > 150) {
+            $("#left-panel").css('background-color', 'blue');
+        } else {
+            $("#left-panel").css('background-color', 'transparent');
+        }
+        console.log(scroll_pos);
+    });
+});
+</script>

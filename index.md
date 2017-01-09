@@ -6,15 +6,16 @@ layout: default
 permalink: index.html
 description:
 title: About Ayuplus - London Based Design Agency | ayuplus.io
+branding: true
 # background video at top of page
-bg_image: poster.jpg
-bg_video: black
+bg_image: assets/images/poster.jpg
+bg_video: assets/videos/ysl
 show_bg_video: true
 image: assets/images/poster.jpg
 alt: We needed an image to demo
 ---
 
-{% if page.show_bg_video %}{% include masthead.loop.html %}{% endif %}
+{% if page.show_bg_video %}{% include masthead.html %}{% endif %}
 <div class="container">
 
 <div class="row">
@@ -43,5 +44,5 @@ alt: We needed an image to demo
     </div>
 
 </div>
-{% include footer.html%}
+
 </div>

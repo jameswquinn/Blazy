@@ -1,13 +1,65 @@
-<header>
-    <nav>
-        <ul>
-            {% assign navigation_pages = site.html_pages | sort: 'navigation_weight' %} {% for p in navigation_pages %} {% if p.navigation_weight %}
-            <li>
-                <a href="{{ p.url }}" {% if p.url==p age.url %}class="active" {% endif %}>
-										{{ p.title }}
-									</a>
-            </li>
-            {% endif %} {% endfor %}
-        </ul>
-    </nav>
-</header>    
+<style>
+/*!
+ * headroom.js v0.9.3 - Give your page some headroom. Hide your header until you need it
+ * Copyright (c) 2016 Nick Williams - http://wicky.nillia.ms/headroom.js
+ * License: MIT
+ */
+    body {
+        background-color: black;
+        height: 3000px;
+    }
+.nav{padding:0;list-style:none;margin-bottom:0;float:right}.nav__item{display:inline-block}@media screen and (min-width: 40em){.nav__item{display:inline-block}}.nav__item:hover{background-color:rgba(78, 205, 196, 0.1)}.nav__item a{display:inline-block;padding:1em;border:none}.header__link{color:#A9ABAE;text-decoration:none;border:none}.header__link:focus{outline:none;background-color:rgba(78, 205, 196, 0.1)}.header__link:hover .icon{color:#4ECDC4}.header{background-color:transparent}.header__link{color:#A9ABAE;text-decoration:none;border:none}.header__link:focus{outline:none;background-color:rgba(78, 205, 196, 0.1)}.header__link:hover .icon{color:#4ECDC4}.header--fixed{position:fixed;z-index:10;right:0;left:0;top:0}.brand{display:inline-block;text-decoration:none;padding:1em 0;color:#fff;-webkit-font-smoothing:antialiased}.brand__forename{font-weight:bold;color:red}.brand__surname{font-weight:normal;color:#fff}.complimentary{display:none}@media screen and (min-width: 40em){.complimentary{display:inline}}.push--left{margin-left:.5em}.headroom{transition:transform .25s ease-in-out;will-change:transform}.headroom--pinned{transform:translateY(0)}.headroom--unpinned{transform:translateY(-100%)}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a,a:visited{text-decoration:underline}a[href]:after{content:" (" attr(href) ")"}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:.5cm}p,h2,h3{orphans:3;widows:3}h2,h3{page-break-after:avoid}.hide-from-print{display:none}}
+</style>
+
+
+<header id="header" class="header header--fixed hide-from-print" role="banner">
+    <div class="container" >
+    
+        <nav id="nav" class="" role="navigation">
+            <ul class="nav">
+                <li class="nav__item ">
+                    <a class="header__link" href="https://www.github.com/WickyNilliams/headroom.js">
+                        <span aria-hidden="true" class="icon icon--gh"></span>
+                        <span class="complimentary push--left">GitHub</span>
+                    </a>
+                </li>
+                <li class="nav__item ">
+                    <a class="header__link" href="https://www.github.com/WickyNilliams/headroom.js">
+                        <span aria-hidden="true" class="icon icon--gh"></span>
+                        <span class="complimentary push--left">Facebook</span>
+                    </a>
+                </li>
+                <li class="nav__item ">
+                    <a class="header__link" href="http://www.twitter.com/WickyNilliams">
+                        <span aria-hidden="true" class="icon icon--tw"></span>
+                        <span class="complimentary push--left">@WickyNilliams</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+        <a href="index.html" class="brand header__link">
+            <b class="brand__forename">ayuplus</b><b class="brand__surname">.io</b>
+        </a>
+    </div>
+</header>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.3/headroom.min.js"></script>
+<script>
+(function() {
+    var header = document.querySelector("#header");
+
+    if(window.location.hash) {
+      header.classList.add("headroom--unpinned");
+    }
+
+    var headroom = new Headroom(header, {
+        tolerance: {
+          down : 10,
+          up : 20
+        },
+        offset : 205
+    });
+    headroom.init();
+
+}());
+</script>

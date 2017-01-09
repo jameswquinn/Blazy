@@ -6,10 +6,11 @@ layout: default
 permalink: index.html
 description:
 title: About Ayuplus - London Based Design Agency | ayuplus.io
+navigation_weight: 1
 branding: true
 # background video at top of page
 bg_image: assets/images/poster.jpg
-bg_video: assets/videos/ysl
+bg_video: assets/videos/black
 show_bg_video: true
 image: assets/images/poster.jpg
 alt: We needed an image to demo

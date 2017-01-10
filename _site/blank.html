@@ -35,34 +35,55 @@
 </head>
 
 <body>
+    <style>
+        body {
+            height: 3000px;
+        }
+.top_nav__panel {
+    transition: 300ms;
+}
+</style>
+
 <header id="header" class="header header--fixed hide-from-print" role="banner">
-    <div class="container" >
-    
-        <nav id="nav" class="" role="navigation">
+    <div class="container">
+
+        <nav id="nav" class="brackets" role="navigation">
             <ul class="nav">
+                
+                
                 <li class="nav__item ">
-                    <a class="header__link" href="https://www.github.com/WickyNilliams/headroom.js">
-                        <span aria-hidden="true" class="icon icon--gh"></span>
-                        <span class="complimentary push--left">GitHub</span>
+                    <a  class="header__link" href="/index">
+                        <span class="complimentary">.index</span>
                     </a>
                 </li>
+                
+                
                 <li class="nav__item ">
-                    <a class="header__link" href="https://www.github.com/WickyNilliams/headroom.js">
-                        <span aria-hidden="true" class="icon icon--gh"></span>
-                        <span class="complimentary push--left">Facebook</span>
+                    <a  class="header__link" href="/about">
+                        <span class="complimentary">.about</span>
                     </a>
                 </li>
+                
+                
                 <li class="nav__item ">
+                    <a  class="header__link" href="/blog">
+                        <span class="complimentary">.blog</span>
+                    </a>
+                </li>
+                
+                
+                <li class="nav__item">
                     <a class="header__link" href="http://www.twitter.com/WickyNilliams">
-                        <span aria-hidden="true" class="icon icon--tw"></span>
-                        <span class="complimentary push--left">@WickyNilliams</span>
+                        <span class="complimentary">@WickyNilliams</span>
                     </a>
                 </li>
+
             </ul>
         </nav>
-        
+
         <a href="index.html" class="brand header__link">
-            <b class="brand__forename">ayuplus</b><b class="brand__surname">.io</b>
+            <span class="brand__forename">ayuplus</span>
+            <span class="brand__surname">.io</span>
         </a>
     </div>
 </header>
@@ -112,6 +133,19 @@
         ga('create', 'UA-XXXXX-X', 'auto');
         ga('send', 'pageview');
 </script>
-
+<script>
+$(document).ready(function () {
+    var scroll_pos = 0;
+    $(".top_nav__panel").scroll(function () {
+        scroll_pos = $(this).scrollTop();
+        if (scroll_pos > 150) {
+            $(".top_nav__panel").css('background-color', 'rgba(0, 0, 0, 0.8)');
+        } else {
+            $(".top_nav__panel").css('background-color', 'transparent');
+        }
+        console.log(scroll_pos);
+    });
+});
+</script>
 </body>
 </html>

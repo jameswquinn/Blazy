@@ -1,33 +1,32 @@
 <style>
-    body {
-        background-color: black;
-    }
-#left-panel {
-    position: fixed;
-    color: white;
+    .content {
+            position: fixed;
+    color: red;
     top: 0;
     left: 0;
-    width: 80%;
+    width: 100%;
     height: 100%;
     z-index: 2;
     overflow:auto;
     height:2000px;
+    }
+.topnav_panel {
     transition: 300ms;
 }
 </style>
 <script src="https://cdn.jsdelivr.net/zepto/1.2.0/zepto.min.js"></script>
-<div id="left-panel">
+<div class="content topnav_panel">
     <div style="height:5000px;">CONTENT</div>
 </div>
 <script>
 $(document).ready(function () {
     var scroll_pos = 0;
-    $("#left-panel").scroll(function () {
+    $(".topnav_panel").scroll(function () {
         scroll_pos = $(this).scrollTop();
         if (scroll_pos > 150) {
-            $("#left-panel").css('background-color', 'blue');
+            $(".topnav_panel").css('background-color', 'rgba(0, 0, 0, 0.8)');
         } else {
-            $("#left-panel").css('background-color', 'transparent');
+            $(".topnav_panel").css('background-color', 'transparent');
         }
         console.log(scroll_pos);
     });

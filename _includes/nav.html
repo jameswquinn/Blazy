@@ -1,43 +1,28 @@
 <header id="header" class="header header--fixed hide-from-print" role="banner">
-    <div class="container" >
-    
-        <nav id="nav" class="" role="navigation">
+    <div class="container">
+
+        <nav id="nav" class="brackets" role="navigation">
             <ul class="nav">
+                {% assign navigation_pages = site.html_pages | sort: 'navigation_weight' %}{% for nav-item in navigation_pages %}{% if nav-item.navigation_weight %}
                 <li class="nav__item ">
-                    <a class="header__link" href="index.html">
-                        <span aria-hidden="true" class="icon icon--gh"></span>
-                        <span class="complimentary push--left">.home</span>
+                    <a {% if nav-item.url == page.url %} class="header__link line-through__active" {% else %} class="header__link"{% endif %} href="{{ nav-item.url }}">
+                        <span class="complimentary">.{{ nav-item.permalink }}</span>
                     </a>
                 </li>
-                <li class="nav__item ">
-                    <a class="header__link" href="about.html">
-                        <span aria-hidden="true" class="icon icon--gh"></span>
-                        <span class="complimentary push--left">.about</span>
-                    </a>
-                </li>
-                <li class="nav__item ">
-                    <a class="header__link" href="contact.html">
-                        <span aria-hidden="true" class="icon icon--gh"></span>
-                        <span class="complimentary push--left">.contact</span>
-                    </a>
-                </li>  
-                <li class="nav__item ">
-                    <a class="header__link" href="blog.html">
-                        <span aria-hidden="true" class="icon icon--gh"></span>
-                        <span class="complimentary push--left">.blog</span>
-                    </a>
-                </li> 
-                <li class="nav__item ">
+                {% endif %}
+                {% endfor %}
+                <li class="nav__item">
                     <a class="header__link" href="http://www.twitter.com/WickyNilliams">
-                        <span aria-hidden="true" class="icon icon--tw"></span>
-                        <span class="complimentary push--left">@WickyNilliams</span>
+                        <span class="complimentary">@WickyNilliams</span>
                     </a>
                 </li>
+
             </ul>
         </nav>
-        
+
         <a href="index.html" class="brand header__link">
-            <b class="brand__forename">ayuplus</b><b class="brand__surname">.io</b>
+            <span class="brand__forename">ayuplus</span>
+            <span class="brand__surname">.io</span>
         </a>
     </div>
 </header>

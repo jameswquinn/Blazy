@@ -15,6 +15,7 @@ show_bg_video: true
 image: assets/images/poster.jpg
 alt: We needed an image to demo
 navigation_weight: 1
+nav
 ---
 
 {% if page.show_bg_video %}{% include masthead.html %}{% endif %}
